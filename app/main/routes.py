@@ -11,8 +11,9 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 @main.route('/home')
+@main.route('/index')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @main.route('/about')
 def about():
