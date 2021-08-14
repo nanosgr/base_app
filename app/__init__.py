@@ -1,3 +1,6 @@
+# Este es el punto de inicio de la aplicación
+# es el módulo de la aplicación en si
+
 from flask import Flask, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 
