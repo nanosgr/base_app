@@ -3,17 +3,21 @@
 
 from flask import Flask, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 from app.config import Config
 
 db = SQLAlchemy()
+login_manager = LoginManager()
 
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    # Inicializamos la conexión a la BD.
-    
+    # Inicializamos la conexión a la BD y agregamos la clase
+    # para Login
     db.init_app(app)
+    login_manager.init_app(app)
+
     # En esta sección agregamos los módulos creados para
     # redireccionar las rutas conforme se utiliza la aplicación
     
